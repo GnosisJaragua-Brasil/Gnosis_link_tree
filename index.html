@@ -297,7 +297,7 @@
             <img src="img/logo-gnosis.png" 
                  class="logo" 
                  alt="Logo Gnosis Brasil"
-                 onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"150\" height=\"80\" viewBox=\"0 0 150 80\"><rect width=\"150\" height=\"80\" fill=\"%23f8f9fa\" rx=\"10\"/><text x=\"50%\" y=\"50%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial\" font-size=\"14\" fill=\"%230d6efd\"> </text></svg>
+                 onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"150\" height=\"80\" viewBox=\"0 0 150 80\"><rect width=\"150\" height=\"80\" fill=\"%23f8f9fa\" rx=\"10\"/><text x=\"50%\" y=\"50%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial\" font-size=\"14\" fill=\"%230d6efd\"></text></svg>
         </div>
 
         <h1>Gnosis Brasil – Jaraguá do Sul</h1>
@@ -316,7 +316,7 @@
             </div>
         </a>
 
-        <a href="https://api.whatsapp.com/send?phone=5547999999999&text=Olá! Gostaria de participar do grupo Gnosis Jaraguá do Sul" 
+        <a href="https://chat.whatsapp.com/HV6vdPwSrtG0tYncOD5rL2" 
            target="_blank" 
            class="card-link whatsapp whatsapp-highlight">
             <div class="card-icon">
@@ -354,7 +354,7 @@
             </div>
         </a>
 
-         <a href="https://www.instagram.com/gnosisbrasil/" target="_blank" class="card-link instagram">
+        <a href="https://www.instagram.com/gnosisbrasil/" target="_blank" class="card-link instagram">
             <div class="card-icon">
                 <i class="fab fa-instagram"></i>
             </div>
@@ -378,14 +378,33 @@
             </div>
         </a>
 
-        
-       
+        <a href="https://gnosisbrasil.com/cursos" target="_blank" class="card-link courses">
+            <div class="card-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="card-text">
+                Cursos & Programação
+            </div>
+            <div class="card-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </a>
 
-        
+        <a href="https://gnosisbrasil.com/contato" target="_blank" class="card-link contact">
+            <div class="card-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="card-text">
+                Contato / Fale Conosco
+            </div>
+            <div class="card-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </a>
 
         <footer>
             <strong>Instituto Gnosis Brasil – Jaraguá do Sul</strong><br>
-             Centro Comercial San Michelli - Sala 15 <br> Centro, Jaraguá do Sul - SC, 89251-460<br>
+            Centro Comercial San Michelli - Sala 15 <br> Centro, Jaraguá do Sul - SC, 89251-460<br>
             <small>&copy; 2025 - Todos os direitos reservados</small>
         </footer>
     </div>
@@ -423,23 +442,6 @@
                 }, 150);
             });
         });
-        
-        // Detectar dispositivo para otimizar o link do WhatsApp
-        function detectDevice() {
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            const whatsappLink = document.querySelector('.card-link.whatsapp');
-            
-            if (isMobile) {
-                // Link para abrir diretamente no WhatsApp
-                whatsappLink.href = "https://api.whatsapp.com/send?phone=5547999999999&text=Olá! Gostaria de participar do grupo Gnosis Jaraguá do Sul";
-            } else {
-                // Link para web WhatsApp
-                whatsappLink.href = "https://web.whatsapp.com/send?phone=5547999999999&text=Olá! Gostaria de participar do grupo Gnosis Jaraguá do Sul";
-            }
-        }
-        
-        // Executar detecção de dispositivo quando a página carregar
-        window.addEventListener('load', detectDevice);
     </script>
 </body>
 </html>
