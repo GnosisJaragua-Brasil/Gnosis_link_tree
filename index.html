@@ -48,10 +48,10 @@
             min-height: 100vh;
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text-main);
-            padding: 30px 15px;
+            padding: 15px 15px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .container-links {
@@ -71,8 +71,8 @@
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             color: var(--text-main);
-            width: 44px;
-            height: 44px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -81,146 +81,75 @@
             backdrop-filter: blur(10px);
             box-shadow: var(--shadow-glow);
             transition: transform 0.2s ease, background 0.3s ease;
+            z-index: 10;
         }
 
         .theme-toggle:hover {
             transform: scale(1.08);
         }
 
-        /* Header */
+        /* Header compacto */
         .logo-container {
-            margin-bottom: 20px;
+            margin-bottom: 8px;
             position: relative;
             display: inline-block;
         }
 
         .logo {
-            width: 140px;
+            width: 90px;
             height: auto;
-            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.03);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
         }
 
         h1 {
-            font-size: 1.65rem;
+            font-size: 1.15rem;
             font-weight: 800;
             letter-spacing: -0.02em;
-            margin-bottom: 8px;
+            margin-bottom: 2px;
             color: var(--text-main);
         }
 
         .sub {
-            font-size: 0.95rem;
-            margin-bottom: 28px;
+            font-size: 0.8rem;
+            margin-bottom: 14px;
             color: var(--text-sub);
-            max-width: 420px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.5;
         }
 
-        /* Links / Cards */
-        .card-link {
+        /* Botão para abrir o Modal de Redes Sociais */
+        .btn-open-modal {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 16px;
-            padding: 16px 20px;
-            margin: 14px 0;
-            text-decoration: none;
             color: var(--text-main);
-            font-size: 1rem;
             font-weight: 600;
-            display: flex;
-            align-items: center;
-            box-shadow: var(--shadow-glow);
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-link:hover {
-            background: var(--card-hover-bg);
-            transform: translateY(-3px);
-            color: var(--text-main);
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
-        }
-
-        .card-icon {
-            font-size: 1.35rem;
-            margin-right: 16px;
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.08);
-            flex-shrink: 0;
-        }
-
-        .card-text {
-            flex: 1;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .card-arrow {
-            color: var(--text-sub);
             font-size: 0.85rem;
-            transition: transform 0.25s ease, color 0.25s ease;
+            padding: 10px 16px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            box-shadow: var(--shadow-glow);
+            backdrop-filter: blur(10px);
         }
-
-        .card-link:hover .card-arrow {
-            transform: translateX(4px);
+        .btn-open-modal:hover {
+            background: var(--card-hover-bg);
             color: var(--primary-color);
         }
 
-        /* Cores Específicas dos Ícones */
-        .card-link.website .card-icon { background: rgba(37, 99, 235, 0.15); color: #3b82f6; }
-        .card-link.whatsapp .card-icon { background: rgba(37, 211, 102, 0.15); color: #25d366; }
-        .card-link.youtube .card-icon { background: rgba(255, 0, 0, 0.15); color: #ff0000; }
-        .card-link.facebook .card-icon { background: rgba(24, 119, 242, 0.15); color: #1877f2; }
-        .card-link.instagram .card-icon { background: rgba(228, 64, 95, 0.15); color: #e4405f; }
-
-        /* Highlight para o WhatsApp */
-        .whatsapp-highlight {
-            border: 1px solid rgba(37, 211, 102, 0.4);
-            position: relative;
-        }
-
-        .whatsapp-badge {
-            position: absolute;
-            top: 10px;
-            right: 14px;
-            background: #25d366;
-            color: #000;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.65rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Seção do Evento / Palestra Kabala */
+        /* Seção do Evento / Palestra Kabala (Prioridade no Topo) */
         .event-card {
             background: var(--card-bg);
             border: 1px solid rgba(212, 175, 55, 0.4);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-radius: 20px;
-            padding: 22px;
-            margin-top: 32px;
+            border-radius: 16px;
+            padding: 18px;
             text-align: left;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             position: relative;
             overflow: hidden;
+            margin-bottom: 16px;
         }
 
         .event-badge {
@@ -229,26 +158,26 @@
             gap: 6px;
             background: linear-gradient(90deg, #d4af37 0%, #f59e0b 100%);
             color: #000;
-            font-size: 0.72rem;
+            font-size: 0.68rem;
             font-weight: 800;
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 20px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .event-poster {
             width: 100%;
-            border-radius: 12px;
-            margin-bottom: 16px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-bottom: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
             display: block;
             border: 1px solid var(--card-border);
         }
 
         .event-title {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 800;
             color: var(--text-main);
             margin-bottom: 8px;
@@ -256,30 +185,30 @@
         }
 
         .event-description {
-            font-size: 0.88rem;
+            font-size: 0.83rem;
             color: var(--text-sub);
             line-height: 1.5;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .event-info-list {
             list-style: none;
             padding: 0;
-            margin: 0 0 18px 0;
-            font-size: 0.85rem;
+            margin: 0 0 14px 0;
+            font-size: 0.81rem;
         }
 
         .event-info-list li {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 8px;
+            gap: 8px;
+            margin-bottom: 6px;
             color: var(--text-main);
         }
 
         .event-info-list i {
             color: #f59e0b;
-            margin-top: 3px;
+            margin-top: 2px;
         }
 
         .btn-event-register {
@@ -291,27 +220,153 @@
             background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
             color: #fff;
             font-weight: 700;
-            font-size: 0.95rem;
-            padding: 14px;
-            border-radius: 12px;
+            font-size: 0.9rem;
+            padding: 12px;
+            border-radius: 10px;
             text-decoration: none;
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
             transition: all 0.25s ease;
         }
 
         .btn-event-register:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.45);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
             color: #fff;
         }
 
+        /* Botão WhatsApp em Destaque */
+        .btn-whatsapp-highlight {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: rgba(37, 211, 102, 0.15);
+            border: 1px solid rgba(37, 211, 102, 0.5);
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-bottom: 16px;
+            transition: all 0.25s ease;
+        }
+
+        .btn-whatsapp-highlight:hover {
+            background: rgba(37, 211, 102, 0.25);
+            color: #25d366;
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp-highlight i {
+            color: #25d366;
+            font-size: 1.2rem;
+        }
+
+        /* Modal Customizado */
+        .custom-modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .custom-modal-backdrop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .custom-modal {
+            background: var(--bg-gradient);
+            border: 1px solid var(--card-border);
+            width: 90%;
+            max-width: 400px;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .custom-modal-backdrop.show .custom-modal {
+            transform: translateY(0);
+        }
+
+        .modal-header-custom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 10px;
+        }
+
+        .modal-title-custom {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        .modal-close-btn {
+            background: none;
+            border: none;
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        .modal-close-btn:hover {
+            color: var(--text-main);
+        }
+
+        .modal-link-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 10px 14px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+        .modal-link-item:hover {
+            background: var(--card-hover-bg);
+            color: var(--primary-color);
+        }
+        .modal-link-item i {
+            font-size: 1.1rem;
+            width: 24px;
+            text-align: center;
+        }
+        .modal-link-item.whatsapp i { color: #25d366; }
+        .modal-link-item.youtube i { color: #ff0000; }
+        .modal-link-item.facebook i { color: #1877f2; }
+        .modal-link-item.instagram i { color: #e4405f; }
+        .modal-link-item.website i { color: #3b82f6; }
+
         /* Footer */
         footer {
-            margin-top: 35px;
-            font-size: 0.82rem;
+            margin-top: 20px;
+            font-size: 0.78rem;
             color: var(--text-sub);
-            line-height: 1.6;
-            padding-top: 20px;
+            line-height: 1.5;
+            padding-top: 15px;
             border-top: 1px solid var(--card-border);
         }
 
@@ -322,54 +377,26 @@
         /* Floating Button */
         .floating-share {
             position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 52px;
-            height: 52px;
+            bottom: 20px;
+            right: 20px;
+            width: 46px;
+            height: 46px;
             background: var(--primary-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
             z-index: 99;
             border: none;
         }
-
         .floating-share:hover {
             transform: scale(1.1);
             background: var(--primary-hover);
         }
-
-        /* Animações de Entrada */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(18px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-item {
-            animation: fadeInUp 0.5s ease forwards;
-            opacity: 0;
-        }
-
-        .card-link:nth-child(1) { animation-delay: 0.05s; }
-        .card-link:nth-child(2) { animation-delay: 0.1s; }
-        .card-link:nth-child(3) { animation-delay: 0.15s; }
-        .card-link:nth-child(4) { animation-delay: 0.2s; }
-        .card-link:nth-child(5) { animation-delay: 0.25s; }
-        .card-link:nth-child(6) { animation-delay: 0.3s; }
-        .card-link:nth-child(7) { animation-delay: 0.35s; }
-        .event-card { animation-delay: 0.4s; }
     </style>
 </head>
 
@@ -382,135 +409,89 @@
             <i class="fas fa-moon" id="themeIcon"></i>
         </button>
 
-        <!-- Logo -->
-        <div class="logo-container animate-item">
+        <!-- Logo e Cabeçalho compactos no topo -->
+        <div class="logo-container">
             <img src="img/logo-gnosis.png" 
                  class="logo" 
                  alt="Logo Gnosis Brasil"
-                 onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'80\' viewBox=\'0 0 150 80\'><rect width=\'150\' height=\'80\' fill=\'%232563eb\' rx=\'10\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\'>GNOSIS</text></svg>';" />
+                 onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'130\' height=\'70\' viewBox=\'0 0 150 80\'><rect width=\'150\' height=\'80\' fill=\'%232563eb\' rx=\'10\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\'>GNOSIS</text></svg>';" />
         </div>
+        <h1>Gnosis Brasil – Jaraguá do Sul</h1>
+        <p class="sub">Estudos, palestras e autoconhecimento</p>
 
-        <h1 class="animate-item">Gnosis Brasil – Jaraguá do Sul</h1>
-        <p class="sub animate-item">Acesse nossos canais, grupos e redes oficiais para conteúdos, eventos e estudos gnósticos</p>
+        <!-- Botão para abrir o Modal de Redes Sociais -->
+        <button class="btn-open-modal" onclick="toggleModal(true)">
+            <i class="fas fa-share-nodes"></i> Acessar Redes Oficiais e Canais
+        </button>
 
-        <!-- Links principais -->
-        <a href="https://gnosisbrasil.com" target="_blank" class="card-link website animate-item">
-            <div class="card-icon">
-                <i class="fas fa-globe"></i>
-            </div>
-            <div class="card-text">
-                Site Oficial
-            </div>
-            <div class="card-arrow">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        </a>
-
-        <a href="https://chat.whatsapp.com/HV6vdPwSrtG0tYncOD5rL2" 
-           target="_blank" 
-           class="card-link whatsapp whatsapp-highlight animate-item">
-            <div class="whatsapp-badge">Grupo Oficial</div>
-            <div class="card-icon">
-                <i class="fab fa-whatsapp"></i>
-            </div>
-            <div class="card-text">
-                Grupo de WhatsApp – Jaraguá do Sul
-            </div>
-            <div class="card-arrow">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        </a>
-
-        <a href="https://youtube.com/gnosisbrasilcanal" target="_blank" class="card-link youtube animate-item">
-            <div class="card-icon">
-                <i class="fab fa-youtube"></i>
-            </div>
-            <div class="card-text">
-                Canal no YouTube
-            </div>
-            <div class="card-arrow">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        </a>
-
-        <a href="https://facebook.com/gnosisbrasil" target="_blank" class="card-link facebook animate-item">
-            <div class="card-icon">
-                <i class="fab fa-facebook"></i>
-            </div>
-            <div class="card-text">
-                Facebook Nacional
-            </div>
-            <div class="card-arrow">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=61578106036481" target="_blank" class="card-link facebook animate-item">
-            <div class="card-icon">
-                <i class="fab fa-facebook"></i>
-            </div>
-            <div class="card-text">
-                Facebook Jaraguá do Sul
-            </div>
-            <div class="card-arrow">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        </a>
-
-        <a href="https://www.instagram.com/gnosisbrasil/" target="_blank" class="card-link instagram animate-item">
-            <div class="card-icon">
-                <i class="fab fa-instagram"></i>
-            </div>
-            <div class="card-text">
-                Instagram Nacional
-            </div>
-            <div class="card-arrow">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        </a>
-
-        <a href="https://instagram.com/gnosis_jaragua" target="_blank" class="card-link instagram animate-item">
-            <div class="card-icon">
-                <i class="fab fa-instagram"></i>
-            </div>
-            <div class="card-text">
-                Instagram Jaraguá do Sul
-            </div>
-            <div class="card-arrow">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        </a>
-
-        <!-- Seção de Destaque: Palestra Kabala -->
-        <div class="event-card animate-item">
+        <!-- SEÇÃO DO BANNER E INFORMAÇÕES DA PALESTRA (EM DESTAQUE NO TOPO) -->
+        <div class="event-card">
             <span class="event-badge"><i class="fas fa-star"></i> Próxima Palestra Gratuita</span>
             
-            <img src="img\kabala_poster_com_novo_fundo.png" alt="Palestra Kabala - A Ciência dos Números e a Árvore da Vida" class="event-poster" />
+            <img src="img/kabala_poster_com_novo_fundo.png" alt="Palestra Kabala - A Ciência dos Números e a Árvore da Vida" class="event-poster" />
             
-            <h2 class="event-title">KABALA: A Ciência dos Números e a Árvore da Vida</h2>
+            <h2 class="event-title">KABALA: A CIÊNCIA DOS NÚMEROS E A ÁRVORE DA VIDA</h2>
             
             <p class="event-description">
-                Descubra como os números e a estrutura da Árvore da Vida revelam os mistérios do Universo e da nossa própria consciência! 🌌 A Kabala ensina a compreender a Divindade e a ordem cósmica através das Sephiroth, abrindo um caminho prático para o autoconhecimento e a expansão espiritual.
+                Descubra como os números e a estrutura da Árvore da Vida revelam os mistérios do Universo e da nossa própria consciência! 🌌<br><br>
+                A Kabala é a Ciência dos Números que nos ensina a compreender a Divindade através das leis do número, peso e medida. Um caminho prático para o autoconhecimento e a expansão da consciência.
             </p>
 
             <ul class="event-info-list">
                 <li><i class="fas fa-ticket-alt"></i> <strong>Entrada:</strong> 100% Gratuita</li>
-                <li><i class="fas fa-coffee"></i> <strong>Coffee Break:</strong> R$ 30,00 (Opcional no intervalo)</li>
-                <li><i class="fas fa-map-marker-alt"></i> <strong>Local:</strong> Rua Guilherme Dancker, 161, Sala 15, Centro Comercial San Michelli - Centro, Jaraguá do Sul/SC</li>
-                <li><i class="fas fa-exclamation-circle"></i> <strong>Aviso:</strong> Vagas limitadas por ordem de inscrição!</li>
+                <li><i class="fas fa-coffee"></i> <strong>Coffee Break:</strong> R$ 30,00 (Aquisição opcional no intervalo)</li>
+                <li><i class="fas fa-exclamation-triangle"></i> <strong>Aviso:</strong> Vagas limitadas por ordem de inscrição!</li>
+                <li><i class="fas fa-map-marker-alt"></i> <strong>LOCAL:</strong> Rua Guilherme Dancker, 161, Sala 15, Centro – Jaraguá do Sul/SC - (Centro Comercial San Michelli)</li>
             </ul>
 
             <a href="https://ac.gnosisbrasil.com/f/37522/JaraguaDoSul-10-26" target="_blank" class="btn-event-register">
-                <i class="fas fa-pen-to-square"></i> Garanta Sua Vaga Gratuitamente
+                <i class="fas fa-pen-to-square"></i> Inscreva-se pelo Link
             </a>
         </div>
 
+        <!-- ACESSO DIRETO AO WHATSAPP (Prioridade Logo Abaixo) -->
+        <a href="https://chat.whatsapp.com/HV6vdPwSrtG0tYncOD5rL2" target="_blank" class="btn-whatsapp-highlight">
+            <i class="fab fa-whatsapp"></i> Entrar no Grupo de WhatsApp Oficial
+        </a>
+
         <footer>
-            <strong>Instituto Gnosis Brasil – Jaraguá do Sul</strong><br>
-            Centro Comercial San Michelli - Sala 15 <br>
-            Rua Guilherme Dancker, 161 - Centro, Jaraguá do Sul - SC, 89251-460<br>
+            <strong>📌 Realização:</strong><br>
+            Instituto Gnosis Brasil - Jaraguá do Sul.<br>
+            Rua Guilherme Dancker, 161, Sala 15 - Centro, Jaraguá do Sul - SC<br>
             <small>&copy; 2025 - Todos os direitos reservados</small>
         </footer>
+    </div>
+
+    <!-- MODAL DE REDES SOCIAIS -->
+    <div class="custom-modal-backdrop" id="socialModal" onclick="handleModalClick(event)">
+        <div class="custom-modal">
+            <div class="modal-header-custom">
+                <h3 class="modal-title-custom">Canais e Redes Oficiais</h3>
+                <button class="modal-close-btn" onclick="toggleModal(false)"><i class="fas fa-xmark"></i></button>
+            </div>
+            
+            <a href="https://chat.whatsapp.com/HV6vdPwSrtG0tYncOD5rL2" target="_blank" class="modal-link-item whatsapp">
+                <i class="fab fa-whatsapp"></i> Grupo de WhatsApp – Jaraguá do Sul
+            </a>
+            <a href="https://gnosisbrasil.com" target="_blank" class="modal-link-item website">
+                <i class="fas fa-globe"></i> Site Oficial Gnosis Brasil
+            </a>
+            <a href="https://youtube.com/gnosisbrasilcanal" target="_blank" class="modal-link-item youtube">
+                <i class="fab fa-youtube"></i> Canal no YouTube
+            </a>
+            <a href="https://instagram.com/gnosis_jaragua" target="_blank" class="modal-link-item instagram">
+                <i class="fab fa-instagram"></i> Instagram Jaraguá do Sul
+            </a>
+            <a href="https://www.instagram.com/gnosisbrasil/" target="_blank" class="modal-link-item instagram">
+                <i class="fab fa-instagram"></i> Instagram Nacional
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61578106036481" target="_blank" class="modal-link-item facebook">
+                <i class="fab fa-facebook"></i> Facebook Jaraguá do Sul
+            </a>
+            <a href="https://facebook.com/gnosisbrasil" target="_blank" class="modal-link-item facebook">
+                <i class="fab fa-facebook"></i> Facebook Nacional
+            </a>
+        </div>
     </div>
 
     <!-- Botão flutuante para compartilhar -->
@@ -523,7 +504,6 @@
         const themeToggleBtn = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         
-        // Verifica preferência salva ou do sistema
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
@@ -543,15 +523,30 @@
             }
         });
 
-        // Função de Compartilhamento Nativa / Fallback
+        // Funções do Modal
+        function toggleModal(show) {
+            const modal = document.getElementById('socialModal');
+            if (show) {
+                modal.classList.add('show');
+            } else {
+                modal.classList.remove('show');
+            }
+        }
+
+        function handleModalClick(event) {
+            // Fecha o modal se clicar fora da caixa interna
+            if (event.target === document.getElementById('socialModal')) {
+                toggleModal(false);
+            }
+        }
+
         function sharePage() {
             if (navigator.share) {
                 navigator.share({
                     title: 'Gnosis Jaraguá do Sul - Links Oficiais',
-                    text: 'Acesse os canais oficiais da Gnosis em Jaraguá do Sul e inscreva-se nas palestras!',
+                    text: 'Acesse os canais da Gnosis em Jaraguá do Sul e inscreva-se na palestra de Kabala!',
                     url: window.location.href
-                })
-                .catch((error) => console.log('Erro ao compartilhar:', error));
+                }).catch((error) => console.log('Erro ao compartilhar:', error));
             } else {
                 navigator.clipboard.writeText(window.location.href)
                     .then(() => alert('Link copiado para a área de transferência!'))
